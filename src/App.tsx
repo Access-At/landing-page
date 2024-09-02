@@ -1,13 +1,13 @@
-import Services from "./components/section/services";
-import Banner from "./components/section/banner";
-import Footer from "./components/section/footer";
-import Navbar from "./components/section/navbar";
-import Teams from "./components/section/teams";
-import Portofolio from "./components/section/portofolio";
+import Banner from "./components/section/banner"
+import Footer from "./components/section/footer"
+import Navbar from "./components/section/navbar"
+import Portofolio from "./components/section/portofolio"
+import Services from "./components/section/services"
+import Teams from "./components/section/teams"
 
 export default function App() {
   return (
-    /** 
+    /**
       TODO: Create Section Componnet About
       TODO: Create Section Componnet Products
     */
@@ -21,5 +21,5 @@ export default function App() {
       </div>
       <Footer />
     </div>
-  );
+  )
 }

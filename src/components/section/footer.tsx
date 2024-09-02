@@ -1,20 +1,23 @@
-import { Instagram } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { companyName, navMenu } from "@/constant";
-import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button"
+import { companyName, navMenu } from "@/constant"
+import { cn } from "@/lib/utils"
+import { Instagram } from "lucide-react"
 
 export default function Footer() {
   return (
     <footer className="bg-foreground text-primary-foreground">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="mb-8 md:mb-0">
-            <h2 className="text-2xl font-bold mb-4">{companyName}</h2>
+            <h2 className="mb-4 text-2xl font-bold">{companyName}</h2>
             {/* FIXME: description */}
-            <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+            <p className="text-sm">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in
+              dui mauris.
+            </p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2">
               {navMenu.map((item, index) => (
                 <li key={index}>
@@ -26,18 +29,20 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             {/* FIXME: add address */}
             {/* <p className="text-sm">123 Main St, Anytown, USA 12345</p> */}
             <p className="text-sm">Email: accessdevtech@gmail.com</p>
             <p className="text-sm">Phone: +62 812-9300-5471</p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+            <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
             <div className="flex space-x-4">
               <a
                 href="https://www.instagram.com/dev.access/"
-                className={cn(buttonVariants({ variant: "ghost", size: "icon" }))}
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "icon" }),
+                )}
                 aria-label="Instagram"
                 target="_blank"
               >
@@ -55,12 +60,13 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-primary-foreground/10 mt-8 pt-8 text-center">
+        <div className="mt-8 border-t border-primary-foreground/10 pt-8 text-center">
           <p className="text-sm">
-            &copy; {new Date().getFullYear()} {companyName}. All rights reserved.
+            &copy; {new Date().getFullYear()} {companyName}. All rights
+            reserved.
           </p>
         </div>
       </div>
     </footer>
-  );
+  )
 }
