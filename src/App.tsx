@@ -1,22 +1,25 @@
-import Navbar from './components/section/navbar'
-
-/*
-    TODO: Warna yang mau di pakai apa ? combinasi warna
-*/
+import Services from "./components/section/services";
+import Banner from "./components/section/banner";
+import Footer from "./components/section/footer";
+import Navbar from "./components/section/navbar";
+import Teams from "./components/section/teams";
+import Portofolio from "./components/section/portofolio";
 
 export default function App() {
   return (
-    /*
-       TODO: Create Section Componnet Hero/Banner
-       TODO: Create Section Componnet pricing
-       TODO: Create Section Componnet Team
-       TODO: Create Section Componnet Testimonials
-       TODO: Create Section Componnet Contact
-       TODO: Create Section Componnet Footer
+    /** 
+      TODO: Create Section Componnet About
+      TODO: Create Section Componnet Products
     */
-    <div className="h-[100rem] bg-gradient-to-br from-indigo-600 to-cyan-400">
-        <Navbar />
+    <div id="home" className="">
+      <Navbar />
+      <Banner />
+      <Services />
+      <div className="flex flex-col items-center justify-center">
+        <Portofolio />
+        <Teams />
+      </div>
+      <Footer />
     </div>
-
-  )
+  );
 }
