@@ -43,7 +43,7 @@ export default function Teams() {
                   damping: 10,
                 }}
               >
-                <Card className="bg-transparent">
+                <Card className="bg-transparent hover:border-primary">
                   <CardContent className="flex flex-col items-center p-4">
                     <motion.img
                       whileHover={{ scale: 1.1 }}

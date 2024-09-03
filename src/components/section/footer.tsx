@@ -1,6 +1,7 @@
 import { buttonVariants } from "@/components/ui/button"
 import { companyName, navMenu } from "@/constant"
 import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
 import { Instagram } from "lucide-react"
 
 export default function Footer() {
@@ -8,15 +9,26 @@ export default function Footer() {
     <footer className="bg-foreground text-primary-foreground">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-          <div className="mb-8 md:mb-0">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mb-8 md:mb-0"
+          >
             <h2 className="mb-4 text-2xl font-bold">{companyName}</h2>
             {/* FIXME: description */}
             <p className="text-sm">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in
               dui mauris.
             </p>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2">
               {navMenu.map((item, index) => (
@@ -27,15 +39,25 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             {/* FIXME: add address */}
             {/* <p className="text-sm">123 Main St, Anytown, USA 12345</p> */}
             <p className="text-sm">Email: accessdevtech@gmail.com</p>
             <p className="text-sm">Phone: +62 812-9300-5471</p>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
             <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
             <div className="flex space-x-4">
               <a
@@ -58,14 +80,19 @@ export default function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a> */}
             </div>
-          </div>
+          </motion.div>
         </div>
-        <div className="mt-8 border-t border-primary-foreground/10 pt-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-8 border-t border-primary-foreground/10 pt-8 text-center"
+        >
           <p className="text-sm">
-            &copy; {new Date().getFullYear()} {companyName}. All rights
-            reserved.
+            © {new Date().getFullYear()} {companyName}. All rights reserved.
           </p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   )

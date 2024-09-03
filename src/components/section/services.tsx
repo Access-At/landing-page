@@ -5,7 +5,7 @@ import { Card } from "../ui/card"
 // FIXME: title, description, card content services mau di isi apa?
 export default function Services() {
   return (
-    <section className="px-4 py-28 md:px-8" id="services">
+    <section className="bg-foreground/5 px-4 py-28 md:px-8" id="services">
       <div className="container mx-auto">
         <div className="grid items-start gap-8 md:grid-cols-2">
           <motion.div
@@ -44,7 +44,7 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="space-y-4 bg-transparent p-4">
+                <Card className="space-y-4 border-primary bg-transparent p-4">
                   <service.icon className="h-12 w-12 text-primary" />
                   <h3 className="text-xl font-semibold">{service.title}</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">

@@ -6,14 +6,17 @@ import { project } from "./../../constant/index"
 
 export default function Portofolio() {
   return (
-    <section className="w-full bg-foreground/95 py-28" id="portofolio">
+    <section
+      className="w-full bg-foreground/5 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28"
+      id="portofolio"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <h2 className="mb-8 text-center text-3xl font-bold uppercase tracking-tighter text-primary-foreground sm:text-4xl md:text-5xl">
+        <h2 className="mb-8 text-center text-3xl font-bold uppercase tracking-tighter sm:text-4xl md:text-5xl">
           Portofolio
         </h2>
       </motion.div>
