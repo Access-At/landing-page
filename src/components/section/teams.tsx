@@ -1,7 +1,7 @@
 import { Card, CardContent } from "../ui/card"
 
-import { motion } from "framer-motion"
 import { teams } from "@/constant"
+import { motion } from "framer-motion"
 
 // FIXME: Images
 export default function Teams() {

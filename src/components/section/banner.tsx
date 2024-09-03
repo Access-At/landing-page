@@ -1,5 +1,5 @@
-import { Button } from "../ui/button"
 import { motion } from "framer-motion"
+import { Button } from "../ui/button"
 
 // FIXME: title, description, and button mau ada apa ngga?
 export default function Banner() {

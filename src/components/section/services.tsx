@@ -1,6 +1,6 @@
+import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Card } from "../ui/card"
-import { motion } from "framer-motion"
 
 // FIXME: title, description, card content services mau di isi apa?
 export default function Services() {

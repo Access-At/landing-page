@@ -92,6 +92,5 @@ export const project = [
 
     image: "https://picsum.photos/200/300?random=9",
   },
-
 ]
 export const companyName = "Access Tech"
