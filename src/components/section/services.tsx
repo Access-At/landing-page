@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react"
 import { Card } from "../ui/card"
+import { motion } from "framer-motion"
 
 // FIXME: title, description, card content services mau di isi apa?
 export default function Services() {
@@ -7,7 +8,13 @@ export default function Services() {
     <section className="px-4 py-28 md:px-8" id="services">
       <div className="container mx-auto">
         <div className="grid items-start gap-8 md:grid-cols-2">
-          <div className="space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
             <div className="inline-block rounded-full bg-primary px-3 py-1 text-sm text-white">
               What Services We Provide
             </div>
@@ -18,6 +25,7 @@ export default function Services() {
               <br />
               with your goals
             </h2>
+
             {/* FIXME: mau pake link ini buat apa ? */}
             <a
               href="#"
@@ -26,16 +34,24 @@ export default function Services() {
               View All Services
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {services.map((service, index) => (
-              <Card key={index} className="space-y-4 bg-transparent p-4">
-                <service.icon className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-semibold">{service.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  {service.description}
-                </p>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="space-y-4 bg-transparent p-4">
+                  <service.icon className="h-12 w-12 text-primary" />
+                  <h3 className="text-xl font-semibold">{service.title}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    {service.description}
+                  </p>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
