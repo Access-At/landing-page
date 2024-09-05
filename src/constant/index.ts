@@ -1,7 +1,9 @@
-import bayu from "@/assets/images/bayu.jpeg"
-import farhan from "@/assets/images/farhan.jpg"
 import { BookOpen, Briefcase, Code, Rocket, Trophy, Users } from "lucide-react"
 import { navMenuType, teamsType } from "./types"
+
+import bayu from "@/assets/images/bayu.jpeg"
+import farhan from "@/assets/images/farhan.jpg"
+import rizsyad from "@/assets/images/rizsyad.jpeg";
 
 // FIXME: images for team
 export const teams: teamsType[] = [
@@ -13,7 +15,7 @@ export const teams: teamsType[] = [
   {
     name: "Rizsyad Abiyandra Riadi",
     position: "CTO, Engineer",
-    image: `https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 100)}.jpg`,
+    image: rizsyad,
   },
   {
     name: "Farhan Reizha Fauzan",

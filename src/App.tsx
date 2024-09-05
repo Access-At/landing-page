@@ -4,6 +4,7 @@ import Footer from "./components/section/footer"
 import Navbar from "./components/section/navbar"
 import Portofolio from "./components/section/portofolio"
 import Products from "./components/section/products"
+import ScrollToTop from "./components/custom/ScrollToTop"
 import Services from "./components/section/services"
 import Teams from "./components/section/teams"
 
@@ -20,6 +21,7 @@ export default function App() {
         <Teams />
       </div>
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }

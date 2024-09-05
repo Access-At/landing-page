@@ -1,4 +1,5 @@
 import { companyTextHeading, companyTextSubHeading } from "@/constant"
+
 import { motion } from "framer-motion"
 import { Button } from "../ui/button"
 

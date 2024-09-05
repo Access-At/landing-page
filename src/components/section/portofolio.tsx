@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card"
 
-import { project } from "@/db/portfolio"
-import { motion } from "framer-motion"
 import { Button } from "../ui/button"
+import { motion } from "framer-motion"
+import { project } from "@/db/portfolio"
 
 export default function Portofolio() {
   return (
@@ -16,7 +16,7 @@ export default function Portofolio() {
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <h2 className="mb-8 text-center text-3xl font-bold uppercase tracking-tighter sm:text-4xl md:text-5xl">
+        <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
           Portofolio
         </h2>
       </motion.div>
