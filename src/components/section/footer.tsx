@@ -1,5 +1,6 @@
 import { buttonVariants } from "@/components/ui/button"
-import { companyName, navMenu } from "@/constant"
+import { companyName, companyTextSubHeading, navMenu } from "@/constant"
+import { settings } from "@/db/settings"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { Instagram } from "lucide-react"
@@ -18,10 +19,7 @@ export default function Footer() {
           >
             <h2 className="mb-4 text-2xl font-bold">{companyName}</h2>
             {/* FIXME: description */}
-            <p className="text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in
-              dui mauris.
-            </p>
+            <p className="text-sm">{companyTextSubHeading}</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -48,9 +46,9 @@ export default function Footer() {
           >
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             {/* FIXME: add address */}
-            {/* <p className="text-sm">123 Main St, Anytown, USA 12345</p> */}
-            <p className="text-sm">Email: accessdevtech@gmail.com</p>
-            <p className="text-sm">Phone: +62 812-9300-5471</p>
+            <p className="text-sm">Address: {settings.address}</p>
+            <p className="text-sm">Email: {settings.email}</p>
+            <p className="text-sm">Phone: {settings.phone}</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 50 }}

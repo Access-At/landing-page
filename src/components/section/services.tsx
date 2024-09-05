@@ -78,9 +78,9 @@ const services = [
         <circle cx="7" cy="7" r="3" />
       </svg>
     ),
-    title: "Marketing strategy and Data Solutions",
+    title: "Custom Application Development",
     description:
-      "We create mind-blowing visuals, brands, websites and products that help startups and innovative companies gain more.",
+      "We create tailored applications to meet specific business needs, enhance productivity, and deliver optimal user experiences. From web applications to mobile solutions, we provide innovative, secure, and seamlessly integrated solutions.",
   },
   {
     icon: ({ className }: { className?: string }) => (
@@ -101,9 +101,9 @@ const services = [
         <path d="M15 22v-4" />
       </svg>
     ),
-    title: "Data Analytics and Solutions",
+    title: "Digital Education Services",
     description:
-      "We create mind-blowing visuals, brands, websites and products that help startups and innovative companies gain more.",
+      "We support digital transformation in education by developing modern, technology-based curricula. We help educational institutions prepare students for the future with relevant content and interactive digital learning tools.",
   },
   {
     icon: ({ className }: { className?: string }) => (
@@ -122,9 +122,9 @@ const services = [
         <path d="M7 17h10" />
       </svg>
     ),
-    title: "Website Design and Development",
+    title: "Technology-Based Thesis Development",
     description:
-      "We create mind-blowing visuals, brands, websites and products that help startups and innovative companies gain more.",
+      "We assist Computer Science students in creating innovative academic works using the latest approaches, in-depth research, and cutting-edge technology. Our support helps students develop solutions that meet academic standards while also aligning with industry needs.",
   },
   {
     icon: ({ className }: { className?: string }) => (
@@ -143,8 +143,8 @@ const services = [
         <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
-    title: "Business Strategy And Solution",
+    title: "Business Digital Transformation",
     description:
-      "We create mind-blowing visuals, brands, websites and products that help startups and innovative companies gain more.",
+      "We collaborate with companies across various sectors to design and implement digital transformation strategies. From integrating new technologies and automating business processes to developing cloud-based solutions, we ensure businesses remain competitive and ready for future challenges.",
   },
 ]

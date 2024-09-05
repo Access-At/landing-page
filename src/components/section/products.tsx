@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { products } from "@/constant"
+import { products } from "@/db/products"
 import { motion } from "framer-motion"
 
 export default function Products() {

@@ -1,3 +1,4 @@
+import { companyTextHeading, companyTextSubHeading } from "@/constant"
 import { motion } from "framer-motion"
 import { Button } from "../ui/button"
 
@@ -13,7 +14,7 @@ export default function Banner() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Welcome to Our Awesome Site
+            {companyTextHeading}
           </motion.h1>
           <motion.p
             className="description"
@@ -21,8 +22,7 @@ export default function Banner() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
-            Discover amazing features and services that will revolutionize your
-            experience.
+            {companyTextSubHeading}
           </motion.p>
 
           <motion.div

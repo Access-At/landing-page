@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card"
 
+import { project } from "@/db/portfolio"
 import { motion } from "framer-motion"
 import { Button } from "../ui/button"
-import { project } from "./../../constant/index"
 
 export default function Portofolio() {
   return (

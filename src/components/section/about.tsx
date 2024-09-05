@@ -1,7 +1,5 @@
-import { journeySteps } from "@/constant"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import JourneyStep from "../JourneyStep"
 
 export default function About() {
   const ref = useRef(null)
@@ -23,17 +21,20 @@ export default function About() {
             </h2>
             {/* FIXME: description */}
             <p className="max-w-[900px] text-sm text-gray-500 dark:text-gray-400 sm:text-base md:text-lg lg:text-xl">
-              From curious beginner to accomplished professional, embark on an
-              exciting career in technology programming.
+              Access Dev Tech is a leader in digital innovation, providing
+              solutions that empower businesses and individuals to adapt and
+              thrive in a dynamic digital era. We focus on developing advanced
+              technologies that support digital transformation through creative
+              and collaborative approaches.
             </p>
           </div>
         </motion.div>
         <div className="mx-auto mt-8 max-w-3xl sm:mt-10 md:mt-12">
-          <ol className="relative border-l border-gray-200 dark:border-gray-700">
+          {/* <ol className="relative border-l border-gray-200 dark:border-gray-700">
             {journeySteps.map((step, index) => (
               <JourneyStep key={index} {...step} index={index} />
             ))}
-          </ol>
+          </ol> */}
         </div>
       </div>
     </section>
