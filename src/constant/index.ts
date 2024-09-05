@@ -3,7 +3,7 @@ import { navMenuType, teamsType } from "./types"
 
 import bayu from "@/assets/images/bayu.jpeg"
 import farhan from "@/assets/images/farhan.jpg"
-import rizsyad from "@/assets/images/rizsyad.jpeg";
+import rizsyad from "@/assets/images/rizsyad.jpeg"
 
 // FIXME: images for team
 export const teams: teamsType[] = [

@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { useCallback, useEffect, useState } from "react"
 
-import { ArrowUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ArrowUp } from "lucide-react"
 
 // Debounce function
 const debounce = (func: (...args: unknown[]) => void, wait: number) => {
