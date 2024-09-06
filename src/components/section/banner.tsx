@@ -3,8 +3,14 @@ import { companyTextHeading, companyTextSubHeading } from "@/constant"
 import { motion } from "framer-motion"
 import { Button } from "../ui/button"
 
-// FIXME: title, description, and button mau ada apa ngga?
 export default function Banner() {
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about")
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <section className="banner" id="home">
       <div className="banner-container">
@@ -33,15 +39,10 @@ export default function Banner() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button size="lg" className="w-full sm:w-auto">
-                Get Started
-              </Button>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
-                variant="outline"
-                className="w-full bg-transparent sm:w-auto"
+                className="w-full sm:w-auto"
+                onClick={scrollToAbout}
               >
                 Learn More
               </Button>

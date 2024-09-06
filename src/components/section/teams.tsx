@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 // FIXME: Images
 export default function Teams() {
   return (
-    <section className="w-full px-4 py-28 md:w-fit md:px-8" id="teams">
+    <section className="w-full px-4 py-28 md:w-fit md:px-8 md:py-44" id="teams">
       <div className="container px-4 md:px-6">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}

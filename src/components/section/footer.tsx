@@ -1,6 +1,6 @@
 import { buttonVariants } from "@/components/ui/button"
 import { companyName, companyTextSubHeading, navMenu } from "@/constant"
-import { settings } from "@/db/settings"
+import { settings } from "@/constant/db/settings"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { Instagram } from "lucide-react"

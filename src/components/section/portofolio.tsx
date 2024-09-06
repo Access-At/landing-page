@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 
-import { project } from "@/db/portfolio"
+import { project } from "@/constant/db/portfolio"
 import { motion } from "framer-motion"
 import { Button } from "../ui/button"
 

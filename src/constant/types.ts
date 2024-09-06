@@ -6,7 +6,7 @@ export type teamsType = {
 
 export type navMenuType = {
   title: string
-  href: string
+  id: string
 }
 
 export type projectType = {

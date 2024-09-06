@@ -6,7 +6,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section className="w-full py-12 sm:py-20 md:py-28" id="about">
+    <section className="w-full py-28 md:py-44" id="about">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           ref={ref}

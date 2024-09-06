@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const [activeSection, setActiveSection] = useState("#home")
+  const [activeSection, setActiveSection] = useState("home")
 
   const handleScroll = useCallback(() => {
     const scrollPosition = window.scrollY
@@ -46,8 +46,9 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
   const isActive = useCallback(
-    (href: string) => {
-      return activeSection === href
+    (id: string) => {
+      const element = document.getElementById(id)
+      return element && activeSection === `#${id}`
     },
     [activeSection],
   )
@@ -59,7 +60,7 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-4 py-6">
         <a
           href="/"
-          className="text-2xl font-bold text-white transition-colors duration-300"
+          className="text-xl font-bold text-white transition-colors duration-300 md:text-2xl"
         >
           {companyName}
         </a>
@@ -111,10 +112,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className={cn(
-                "flex flex-col md:flex-row md:gap-4",
-                isMenuOpen ? "mt-4" : "mt-0",
-              )}
+              className={cn("flex flex-col md:flex-row md:gap-x-4")}
             >
               {navMenu.map((item, index) =>
                 isMenuOpen ? (
@@ -122,19 +120,20 @@ export default function Navbar() {
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
                     <MenuList
-                      href={item.href}
+                      id={item.id}
                       title={item.title}
-                      isActive={isActive(item.href)}
+                      isActive={isActive(item.id)}
                     />
                   </motion.div>
                 ) : (
                   <MenuList
-                    href={item.href}
+                    id={item.id}
                     title={item.title}
-                    isActive={isActive(item.href)}
+                    isActive={isActive(item.id)}
                   />
                 ),
               )}

@@ -30,12 +30,12 @@ export const teams: teamsType[] = [
 ]
 
 export const navMenu: navMenuType[] = [
-  { title: "Home", href: "#home" },
-  { title: "About", href: "#about" },
-  { title: "Services", href: "#services" },
-  { title: "Products", href: "#products" },
-  { title: "Portofolio", href: "#portofolio" },
-  { title: "Teams", href: "#teams" },
+  { title: "Home", id: "home" },
+  { title: "About", id: "about" },
+  { title: "Services", id: "services" },
+  { title: "Products", id: "products" },
+  { title: "Portofolio", id: "portofolio" },
+  { title: "Teams", id: "teams" },
 ]
 
 // FIXME: content Products
@@ -84,7 +84,3 @@ export const companyName = "Access Dev Tech"
 export const companyTextHeading = `Welcome to ${companyName}`
 export const companyTextSubHeading =
   "Provider of Application Services, Digital Innovation, and IT Curriculum for Education."
-
-// export const socialMedia: Array<any> = {
-
-// }
