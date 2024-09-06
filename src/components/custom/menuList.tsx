@@ -4,7 +4,7 @@ import { Button } from "../ui/button"
 interface MenuItem {
   title: string
   id: string
-  isActive: boolean | null
+  isActive?: boolean | null
 }
 
 export default function MenuList({ isActive, title, id }: MenuItem) {

@@ -19,7 +19,6 @@ export default function About() {
             <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl">
               About
             </h2>
-            {/* FIXME: description */}
             <p className="max-w-[900px] text-sm text-gray-500 dark:text-gray-400 sm:text-base md:text-lg lg:text-xl">
               Access Dev Tech is a leader in digital innovation, providing
               solutions that empower businesses and individuals to adapt and
@@ -29,13 +28,6 @@ export default function About() {
             </p>
           </div>
         </motion.div>
-        <div className="mx-auto mt-8 max-w-3xl sm:mt-10 md:mt-12">
-          {/* <ol className="relative border-l border-gray-200 dark:border-gray-700">
-            {journeySteps.map((step, index) => (
-              <JourneyStep key={index} {...step} index={index} />
-            ))}
-          </ol> */}
-        </div>
       </div>
     </section>
   )

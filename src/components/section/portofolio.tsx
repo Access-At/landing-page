@@ -69,7 +69,7 @@ export default function Portofolio() {
                 size="lg"
                 className="border-primary text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground"
               >
-                View All Projects
+                Load More
               </Button>
             </motion.div>
           </motion.div>

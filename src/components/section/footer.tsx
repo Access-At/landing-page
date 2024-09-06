@@ -1,4 +1,4 @@
-import { buttonVariants } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { companyName, companyTextSubHeading, navMenu } from "@/constant"
 import { settings } from "@/constant/db/settings"
 import { cn } from "@/lib/utils"
@@ -6,6 +6,13 @@ import { motion } from "framer-motion"
 import { Instagram } from "lucide-react"
 
 export default function Footer() {
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <footer className="bg-foreground text-primary-foreground">
       <div className="container mx-auto px-6 py-12">
@@ -18,7 +25,6 @@ export default function Footer() {
             className="mb-8 md:mb-0"
           >
             <h2 className="mb-4 text-2xl font-bold">{companyName}</h2>
-            {/* FIXME: description */}
             <p className="text-sm">{companyTextSubHeading}</p>
           </motion.div>
           <motion.div
@@ -31,9 +37,13 @@ export default function Footer() {
             <ul className="space-y-2">
               {navMenu.map((item, index) => (
                 <li key={index}>
-                  <a href={item.href} className="hover:underline">
+                  <Button
+                    onClick={() => handleScroll(item.id)}
+                    variant="ghost"
+                    className="p-0 hover:bg-transparent hover:text-white hover:underline"
+                  >
                     {item.title}
-                  </a>
+                  </Button>
                 </li>
               ))}
             </ul>
@@ -45,7 +55,6 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
-            {/* FIXME: add address */}
             <p className="text-sm">Address: {settings.address}</p>
             <p className="text-sm">Email: {settings.email}</p>
             <p className="text-sm">Phone: {settings.phone}</p>
