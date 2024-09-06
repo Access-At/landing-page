@@ -1,8 +1,9 @@
 import { companyName, navMenu } from "@/constant"
-import { motion } from "framer-motion"
 import { useCallback, useEffect, useState } from "react"
 
 import { cn } from "@/lib/utils"
+import { AnimatePresence, motion } from "framer-motion"
+import { Menu, X } from "lucide-react"
 import MenuList from "../custom/menuList"
 import { Button } from "../ui/button"
 
@@ -70,29 +71,32 @@ export default function Navbar() {
             className="cursor-pointer text-white hover:bg-transparent hover:text-white focus:outline-none"
             aria-label="Toggle Menu"
           >
-            <motion.svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              animate={{ rotate: isMenuOpen ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-                animate={{
-                  d: isMenuOpen
-                    ? "M6 18L18 6M6 6l12 12"
-                    : "M4 6h16M4 12h16M4 18h16",
-                }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.svg>
+            <AnimatePresence mode="wait">
+              {isMenuOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ opacity: 0, rotate: -90 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: 90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="open"
+                  initial={{ opacity: 0, rotate: 90 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: -90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </Button>
         </div>
+
         <ul
           className={cn(
             "text-white md:static md:flex md:space-x-6 md:bg-transparent md:shadow-none",
@@ -101,14 +105,41 @@ export default function Navbar() {
               : "hidden",
           )}
         >
-          {navMenu.map((item, index) => (
-            <MenuList
-              key={index}
-              href={item.href}
-              title={item.title}
-              isActive={isActive(item.href)}
-            />
-          ))}
+          <AnimatePresence mode="wait">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className={cn(
+                "flex flex-col md:flex-row md:gap-4",
+                isMenuOpen ? "mt-4" : "mt-0",
+              )}
+            >
+              {navMenu.map((item, index) =>
+                isMenuOpen ? (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                  >
+                    <MenuList
+                      href={item.href}
+                      title={item.title}
+                      isActive={isActive(item.href)}
+                    />
+                  </motion.div>
+                ) : (
+                  <MenuList
+                    href={item.href}
+                    title={item.title}
+                    isActive={isActive(item.href)}
+                  />
+                ),
+              )}
+            </motion.div>
+          </AnimatePresence>
         </ul>
       </div>
     </nav>
