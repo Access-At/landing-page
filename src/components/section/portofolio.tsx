@@ -1,10 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card"
-
 import { project } from "@/constant/db/portfolio"
 import { motion } from "framer-motion"
+import { useState } from "react"
 import { Button } from "../ui/button"
 
 export default function Portofolio() {
+  const [visibleProjects, setVisibleProjects] = useState(8)
+
+  const loadMore = () => {
+    setVisibleProjects(prevVisible => Math.min(prevVisible + 8, project.length))
+  }
+
   return (
     <section
       className="w-full bg-foreground/5 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28"
@@ -22,7 +28,7 @@ export default function Portofolio() {
       </motion.div>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {project.slice(0, 8).map((item, index) => (
+          {project.slice(0, visibleProjects).map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -54,8 +60,7 @@ export default function Portofolio() {
           ))}
         </div>
 
-        {/* FIXME: jika project lebih dari 8, tampilkan button view all project mau gitu kah ? atau gimana ? */}
-        {project.length > 8 && (
+        {visibleProjects < project.length && (
           <motion.div
             className="mt-8 flex justify-center"
             initial={{ opacity: 0, y: 20 }}
@@ -68,6 +73,7 @@ export default function Portofolio() {
                 variant="outline"
                 size="lg"
                 className="border-primary text-base font-semibold text-primary hover:bg-primary hover:text-primary-foreground"
+                onClick={loadMore}
               >
                 Load More
               </Button>
