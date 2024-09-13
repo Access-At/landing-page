@@ -3,10 +3,11 @@ import "./global.css"
 import { LazyMotion, domAnimation } from "framer-motion"
 import { companyName, companyTextSubHeading } from "./constant"
 
-import { StrictMode } from "react"
+import { StrictMode, Suspense } from "react"
 import { createRoot } from "react-dom/client"
 import { SuperSEO } from "react-super-seo"
 import App from "./App"
+import Loading from "./components/ui/loading"
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -33,9 +34,10 @@ createRoot(document.getElementById("root")!).render(
       //     },
       //   }}
     />
-
-    <LazyMotion features={domAnimation}>
-      <App />
-    </LazyMotion>
+    <Suspense fallback={<Loading />}>
+      <LazyMotion features={domAnimation}>
+        <App />
+      </LazyMotion>
+    </Suspense>
   </StrictMode>,
 )
