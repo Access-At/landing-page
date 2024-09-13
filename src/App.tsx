@@ -1,12 +1,14 @@
-import ScrollToTop from "./components/custom/ScrollToTop"
-import About from "./components/section/about"
-import Banner from "./components/section/banner"
-import Footer from "./components/section/footer"
-import Navbar from "./components/section/navbar"
-import Portofolio from "./components/section/portofolio"
-import Products from "./components/section/products"
-import Services from "./components/section/services"
-import Teams from "./components/section/teams"
+import * as React from "react"
+
+const ScrollToTop = React.lazy(() => import("./components/custom/ScrollToTop"))
+const About = React.lazy(() => import("./components/section/about"))
+const Banner = React.lazy(() => import("./components/section/banner"))
+const Footer = React.lazy(() => import("./components/section/footer"))
+const Navbar = React.lazy(() => import("./components/section/navbar"))
+const Portofolio = React.lazy(() => import("./components/section/portofolio"))
+const Products = React.lazy(() => import("./components/section/products"))
+const Services = React.lazy(() => import("./components/section/services"))
+const Teams = React.lazy(() => import("./components/section/teams"))
 
 export default function App() {
   return (
